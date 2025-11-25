@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PyGMT 介紹網站</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <header class="bg-blue-600 text-white py-10 text-center shadow-lg">
+    <h1 class="text-4xl font-bold mb-2">歡迎來到 PyGMT 的世界！</h1>
+    <p class="text-lg opacity-90">用 Python 打造精美又專業的地圖視覺化工具</p>
+  </header>
+
+  <section class="max-w-4xl mx-auto mt-10 px-4">
+    <div class="bg-white p-6 rounded-2xl shadow-md">
+      <h3 class="text-xl font-semibold mb-4">影片重點摘要</h3>
+      <ul class="list-disc pl-6 space-y-2 mb-6">
+        <li><strong>PyGMT 介紹：</strong> 說明 PyGMT 是 GMT 的 Python 介面，可用於專業地圖製作。</li>
+        <li><strong>基本繪圖流程：</strong> 展示如何建立 Figure、設定地圖區域、加入海岸線與色彩配置。</li>
+        <li><strong>資料來源：</strong> 使用地形資料、海深資料、或地理資料集。</li>
+        <li><strong>加入視覺元素：</strong> 示範如何加入等高線、色階、標記與其他地理圖層。</li>
+        <li><strong>成果展示：</strong> 影片中展示多款以 PyGMT 製作之美觀地圖。</li>
+      </ul>
+      <h2 class="text-2xl font-semibold mb-4">什麼是 PyGMT？</h2>
+      <p class="leading-relaxed mb-4">
+        PyGMT 是基於 GMT（Generic Mapping Tools）的 Python 介面，讓你能以 Python 語法製作出版級的地圖與地理資料視覺化。從地震分佈、測深資料、等高線到全球海陸圖，都能輕鬆實現！
+      </p>
+      <p class="leading-relaxed mb-4">
+        如果你喜歡 Python，又需要強大的地理視覺化工具，PyGMT 絕對是你的好夥伴。
+      </p>
+    </div>
+  </section>
+
+  <section class="max-w-4xl mx-auto mt-10 px-4">
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-white p-6 rounded-2xl shadow-md">
+        <h3 class="text-xl font-semibold mb-3">PyGMT 的特色</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>強大而精準的地圖繪製能力</li>
+          <li>完整整合 GMT 的功能</li>
+          <li>可用於學術研究與出版級圖件</li>
+          <li>支援多種投影、色階與地理資料套件</li>
+        </ul>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow-md">
+        <h3 class="text-xl font-semibold mb-3">範例：生成世界地圖</h3>
+        <pre class="bg-gray-900 text-green-300 p-4 rounded-lg text-sm overflow-auto">
+import pygmt
+fig = pygmt.Figure()
+fig.coast(region="d", projection="W0/6i", land="lightgray", water="skyblue")
+fig.show()
+        </pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-4xl mx-auto mt-10 px-4 mb-12">
+    <div class="bg-white p-6 rounded-2xl shadow-md text-center">
+      <h3 class="text-xl font-semibold mb-4">開始你的 PyGMT 旅程！</h3>
+      <p class="mb-6">立即安裝並探索這個強大的地理視覺化工具。</p>
+      <a href="https://www.pygmt.org" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-xl shadow hover:bg-blue-700 transition">前往官方網站</a>
+    </div>
+  </section>
+
+  <section class="max-w-4xl mx-auto mt-10 px-4 mb-12">
+    <div class="bg-white p-6 rounded-2xl shadow-md">
+      <h3 class="text-xl font-semibold mb-4">PyGMT 圖片示例：全球地形渲染</h3>
+      <p class="mb-4">以下示例展示如何使用 <code>grdimage</code> 以 <code>geo</code> 色階渲染全球地形資料：</p>
+      <pre class="bg-gray-900 text-green-300 p-4 rounded-lg text-sm overflow-auto mb-4">
+fig = pygmt.Figure()
+fig.grdimage(grid=grid, projection="R12c", cmap="geo")
+fig.show()
+      </pre>
+      <img src="/mnt/data/圖1.png" alt="PyGMT 全球地形圖示例" class="rounded-xl shadow-md mx-auto" />
+    </div>
+  </section>
+
+</body>
+</html>
